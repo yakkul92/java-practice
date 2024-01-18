@@ -54,7 +54,7 @@
 //     StringBuilder sb = new StringBuilder();
 //     for (int i = 0; i < 10; i++){
 //       sb.append("Java");
-//     } 
+//     }
 //     String s = sb.toString();
 //   }
 // }
@@ -65,7 +65,7 @@
 //     String s = "abc,def:ghi";
 //     String[] words = s.split("[,:]");
 //     for (String w : words){
-//       System.out.println(w + "->"); 
+//       System.out.println(w + "->");
 //     }
 //   }
 // }
@@ -80,29 +80,83 @@
 // }
 
 // 1から100までの整数をカンマで連結したりなんだり
-public class main{
-  public static void main(String[] args){
-    StringBuilder sb = new StringBuilder();
-    for (int i =0; i<100; i++){
-      sb.append(i+1).append(",");
-    } 
-    String s = sb.toString();
-    String[] a = s.split(",");
-    
-    // 配列の各要素をループして出力
-    for (String element : a) {
-      System.out.print(element + " ");
-    }
-    System.out.println();
+// public class main{
+//   public static void main(String[] args){
+//     StringBuilder sb = new StringBuilder();
+//     for (int i =0; i<100; i++){
+//       sb.append(i+1).append(",");
+//     }
+//     String s = sb.toString();
+//     String[] a = s.split(",");
 
-    // 特定の要素を指定して取り出し、出力
-    int indexToRetrieve = 2; // 例として3番目の要素を取り出す場合
-    if (indexToRetrieve >= 0 && indexToRetrieve < a.length) {
-      String specificElement = a[indexToRetrieve];
-      System.out.println("特定の要素: " + specificElement);
-    } else {
-      System.out.println("指定されたインデックスは配列の範囲外です。");
-    }
+//     // 配列の各要素をループして出力
+//     for (String element : a) {
+//       System.out.print(element + " ");
+//     }
+//     System.out.println();
+
+//     // 特定の要素を指定して取り出し、出力
+//     int indexToRetrieve = 2; // 例として3番目の要素を取り出す場合
+//     if (indexToRetrieve >= 0 && indexToRetrieve < a.length) {
+//       String specificElement = a[indexToRetrieve];
+//       System.out.println("特定の要素: " + specificElement);
+//     } else {
+//       System.out.println("指定されたインデックスは配列の範囲外です。");
+//     }
+
+//   }
+// }
+
+// import java.text.SimpleDateFormat;
+// import java.util.Calendar;
+// import java.util.Date;
+// public class main{
+//   public static void main(String[] args){
+//     // 現在の日時をDate型で取得
+//     Date now = new Date();
     
-  }
-}
+//     // Calendarにセット
+//     Calendar c = Calendar.getInstance();
+//     c.setTime(now);
+    
+//     // 取得した値に100を足してCalendarの日にセット
+//     int day = c.get(Calendar.DAY_OF_MONTH);
+//     day += 100;
+//     c.set(Calendar.DAY_OF_MONTH, day);
+//     // Calendarの日付情報をDate型に変換
+    
+//     Date future = c.getTime();
+//     SimpleDateFormat f = new SimpleDateFormat("西暦yyyy年MM月dd日");
+//     System.out.println(f.format(future));
+//   }
+// }
+
+
+// // java.timeパッケージの利用
+// import java.time.*;
+// import java.time.format.*;
+// public class main{
+//   public static void main(String[] args){
+//     LocalDate now = LocalDate.now();
+//     LocalDate future = now.plusDays(100);
+//     DateTimeFormatter f = DateTimeFormatter.ofPattern("西暦yyyy年MM月dd日");
+//     System.out.println(future.format(f));
+//   }
+// }
+
+// import java.time.LocalDate;
+// public class LocalDateExample {
+//     public static void main(String[] args) {
+//         // 現在の日付を取得
+//         LocalDate today = LocalDate.now();
+//         System.out.println("現在の日付: " + today);
+
+//         // 2024年1月18日を表すLocalDateオブジェクトを作成
+//         LocalDate specificDate = LocalDate.of(2024, 1, 18);
+//         System.out.println("指定した日付: " + specificDate);
+
+//         // 特定の日数を加算して新しい日付を作成
+//         LocalDate futureDate = today.plusDays(30);
+//         System.out.println("30日後の日付: " + futureDate);
+//     }
+// }
