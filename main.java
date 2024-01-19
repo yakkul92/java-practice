@@ -160,3 +160,83 @@
 //         System.out.println("30日後の日付: " + futureDate);
 //     }
 // }
+
+// // 拡張for文
+// import java.util.ArrayList;
+
+// public class main{
+//   public static void main(String[] args){
+//     ArrayList<Integer> points = new ArrayList<Integer>();
+//     points.add(10);
+//     points.add(80);
+//     points.add(75);
+//     for(int i : points){
+//       System.out.println(i);
+//     }
+//   }
+// }
+
+// // イテレータ使用例
+// import java.util.*;
+// public class main{
+//   public static void main(String[] args){
+//     ArrayList<String> names = new ArrayList<String>();
+//     names.add("a");
+//     names.add("b");
+//     names.add("c");
+//     Iterator<String> it = names.iterator();
+//     while(it.hasNext()){
+//       String e = it.next();
+//       System.out.println(e);
+//     }
+//   }
+// }
+
+// // setでの実装
+// import java.util.Set;
+// import java.util.TreeSet;
+
+// public class main{
+//   public static void main(String[] args){
+//     Set<String> words = new TreeSet<String>();
+//     words.add("a");
+//     words.add("b");
+//     words.add("c");
+//     for (String s :words){
+//       System.out.print(s + "→");
+//     } 
+//   }
+// }
+
+// // Mapの実装
+// import java.util.*;
+// public class main{
+//   public static void main(String[] args){
+//     Map<String, Integer> prefs = new HashMap<String, Integer>();
+//     prefs.put("a", 255);
+//     prefs.put("b", 1261);
+//     prefs.put("c", 181);
+//     int a = prefs.get("a");
+//     System.out.println("a=" + a);
+//     prefs.remove("b");
+//     prefs.put("c", 222);
+//     int c = prefs.get("c");
+//     System.out.println("c=" + c);
+//   }
+// }
+
+// // mapをつかって1個ずつ取り出す
+// import java.util.*;
+// public class main{
+//   public static void main(String[] args){
+//     Map<String, Integer> prefs = new HashMap<String, Integer>();
+//     prefs.put("京都", 255);
+//     prefs.put("東京", 1261);
+//     prefs.put("熊本", 182);
+//     for (String key : prefs.keySet()){
+//       int value = prefs.get(key);
+//       System.out.println(key + "の人口は" + value);
+//     } 
+//   }
+// }
+
