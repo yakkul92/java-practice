@@ -240,3 +240,38 @@
 //   }
 // }
 
+import java.util.*;
+
+// public class hero{
+//   private String name;
+//   public Hero(String name){ this.name = name; }
+//   public String getName(){ return this.name }
+// }
+
+// public class main{
+//   public static void main(String[] args){
+//     hero h1 = new hero("斎藤");
+//     hero h2 = new hero("鈴木");
+//     List<hero> heroes = new ArrayList<hero>();
+//     heroes.add(h1);
+//     heroes.add(h2);
+//     for(hero h : heroes){
+//       System.out.println(h.getName());
+//     }
+//   }
+// }
+
+import java.util.*;
+public class main{
+  public static void main(String[] args){
+    hero h1 = new hero("鈴木");
+    hero h2 = new hero("斎藤");
+    Map<hero, Integer> heroes = new HashMap<hero, Integer>();
+    heroes.put(h1, 3);
+    heroes.put(h2, 7);
+    for (hero key : heroes.keySet()){
+      int value =heroes.get(key);
+      System.out.println(key.getName() + "が倒したのは" + value);
+    }
+  }
+}
