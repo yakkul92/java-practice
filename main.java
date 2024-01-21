@@ -114,17 +114,17 @@
 //   public static void main(String[] args){
 //     // 現在の日時をDate型で取得
 //     Date now = new Date();
-    
+
 //     // Calendarにセット
 //     Calendar c = Calendar.getInstance();
 //     c.setTime(now);
-    
+
 //     // 取得した値に100を足してCalendarの日にセット
 //     int day = c.get(Calendar.DAY_OF_MONTH);
 //     day += 100;
 //     c.set(Calendar.DAY_OF_MONTH, day);
 //     // Calendarの日付情報をDate型に変換
-    
+
 //     Date future = c.getTime();
 //     SimpleDateFormat f = new SimpleDateFormat("西暦yyyy年MM月dd日");
 //     System.out.println(f.format(future));
@@ -204,7 +204,7 @@
 //     words.add("c");
 //     for (String s :words){
 //       System.out.print(s + "→");
-//     } 
+//     }
 //   }
 // }
 
@@ -236,7 +236,7 @@
 //     for (String key : prefs.keySet()){
 //       int value = prefs.get(key);
 //       System.out.println(key + "の人口は" + value);
-//     } 
+//     }
 //   }
 // }
 
@@ -276,6 +276,7 @@ public class main{
   }
 }
 
+git check
 git check
 git check
 git check
