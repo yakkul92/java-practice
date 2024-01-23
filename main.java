@@ -261,32 +261,22 @@ import java.util.*;
 //   }
 // }
 
-import java.util.*;
-public class main{
-  public static void main(String[] args){
-    hero h1 = new hero("鈴木");
-    hero h2 = new hero("斎藤");
-    Map<hero, Integer> heroes = new HashMap<hero, Integer>();
-    heroes.put(h1, 3);
-    heroes.put(h2, 7);
-    for (hero key : heroes.keySet()){
-      int value =heroes.get(key);
-      System.out.println(key.getName() + "が倒したのは" + value);
-    }
-  }
-}
+// // Map使い方
+// import java.util.*;
+// public class main{
+//   public static void main(String[] args){
+//     hero h1 = new hero("鈴木");
+//     hero h2 = new hero("斎藤");
+//     Map<hero, Integer> heroes = new HashMap<hero, Integer>();
+//     heroes.put(h1, 3);
+//     heroes.put(h2, 7);
+//     for (hero key : heroes.keySet()){
+//       int value =heroes.get(key);
+//       System.out.println(key.getName() + "が倒したのは" + value);
+//     }
+//   }
+// }
 
-import java.util.*;
 public class main{
-  public static void main(String[] args){
-    hero h1 = new hero("鈴木");
-    hero h2 = new hero("斎藤");
-    Map<hero, Integer> heroes = new HashMap<hero, Integer>();
-    heroes.put(h1, 3);
-    heroes.put(h2, 7);
-    for (hero key : heroes.key.keySet()){
-      int value = heroes.get(key);
-      System.out.println(key.getName() + "が倒したのは" + )
-    }
-  }
+  
 }
