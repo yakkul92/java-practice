@@ -261,19 +261,81 @@
 //   }
 // }
 
-// Map使い方
-import java.util.*;
+// // Map使い方
+// import java.util.*;
+// public class main{
+//   public static void main(String[] args){
+//     hero h1 = new hero("鈴木");
+//     hero h2 = new hero("斎藤");
+//     Map<hero, Integer> heroes = new HashMap<hero, Integer>();
+//     heroes.put(h1, 3);
+//     heroes.put(h2, 7);
+//     for (hero key : heroes.keySet()){
+//       int value =heroes.get(key);
+//       System.out.println(key.getName() + "が倒したのは" + value);
+//     }
+//   }
+// }
+
+// public class StrongBox<E>{
+//   private E item;
+//   public void puts(E, i){
+//     this.item = i;
+//   }
+//   public E get(){
+//     return this.item;
+//   }
+// }
+
+// enum keytype{ PADLOCK, BUTTOM, DIAL, FINGER; }
+
+// public class StringBox<E>{
+//   private KeyType keyType;
+//   private E item;
+//   private long count; 
+//   public Strongbox(Keytype key){
+//     this.keyType = key;
+//   }
+//   public void put(E, i){
+//     this.item = i;
+//   }
+//   public E get(){
+//     this.count++;
+//     switch(this.keyType){
+//       case PADLOCK;
+//       if (count < 1024) return null;
+//       break;
+//       case BUTTON;
+//       if (count < 10000) return null;
+//       break; 
+//       case DIAL;
+//       if (count < 30000) return null;
+//       break; 
+//       case FINGER;
+//       if (count < 100000) return null;
+//       break; 
+//     }
+//     this.count = 0;
+//     return this.item; 
+//   }
+// }
+
+// ファイルコピープログラム作成
+// java.input,outputパッケージ
+import java.io.*;
+
 public class main{
-  public static void main(String[] args){
-    hero h1 = new hero("鈴木");
-    hero h2 = new hero("斎藤");
-    Map<hero, Integer> heroes = new HashMap<hero, Integer>();
-    heroes.put(h1, 3);
-    heroes.put(h2, 7);
-    for (hero key : heroes.keySet()){
-      int value =heroes.get(key);
-      System.out.println(key.getName() + "が倒したのは" + value);
+  public static void main(String[] args) throws Exception{
+    String inFile = args[0];
+    String outFile = args[1];
+    FileInputStream fis = new FileInputStream(inFile);
+    FileOutputStream fos = new FileOutputStream(outFile);
+    int i = fis.read();
+    while(i != -1){
+      fos.write(i); i =fis.read();
     }
+    fos.flush();
+    fos.close();
+    fis.close();
   }
 }
-
