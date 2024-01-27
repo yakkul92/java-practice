@@ -343,38 +343,92 @@
 
 
 // ファイル圧縮プログラム作成
+// import java.io.*;
+// import java.util.zip.GZIPOutputStream;
+
+// public class main{
+//   public static void main(String[] args){
+//     String inFile  = args[1];
+//     String outFile = args[2];
+//     FileInputStream fis = null;
+//     GZIPOutputStream gzos = null;
+//     try{
+//       fis = new FileInputStream(inFile);
+//       FileOutputStream fos = new FileOutputStream(outFile);
+//       BufferedOutputStream bos = new BufferedOutputStream(fos);
+//       gzos = new GZIPOutputStream(bos);
+//       int i = fis.read();
+//       while(i != -1){
+//         gzos.write(i);
+//         i = fis.read();
+//       }
+//       gzos.flush();
+//       gzos.close();
+//       fis.close();
+//     }catch(IOException e){
+//       System.err.println("ファイル操作に失敗しました");
+//       try{
+//         if(fis != null){
+//           fis.close();
+//         }
+//         if (gzos != null) {
+//           gzos.close();
+//         }
+//       }catch(IOException ee) {}
+//     }
+//   }
+// }
+
+// 改良バージョン
 import java.io.*;
 import java.util.zip.GZIPOutputStream;
 
-public class main{
-  public static void main(String[] args){
-    String inFile  = args[1];
-    String outFile = args[2];
-    FileInputStream fis = null;
-    GZIPOutputStream gzos = null;
-    try{
-      fis = new FileInputStream(inFile);
-      FileOutputStream fos = new FileOutputStream(outFile);
-      BufferedOutputStream bos = new BufferedOutputStream(fos);
-      gzos = new GZIPOutputStream(bos);
-      int i = fis.read();
-      while(i != -1){
-        gzos.write(i);
-        i = fis.read();
+public class main {
+    public static void main(String[] args) {
+        if (args.length < 2) {
+          System.err.println("入力ファイルと出力ファイルのパスを指定してください");
+          return;
       }
-      gzos.flush();
-      gzos.close();
-      fis.close();
-    }catch(IOException e){
-      System.err.println("ファイル操作に失敗しました");
-      try{
-        if(fis != null){
-          fis.close();
+      
+        String inFile = args[0];
+        String outFile = args[1];      
+
+        // 出力ディレクトリの存在確認と作成
+        File outputDir = new File(outFile).getParentFile();
+        if (outputDir != null && !outputDir.exists()) {
+            outputDir.mkdirs();
+        }        
+
+        FileInputStream fis = null;
+        GZIPOutputStream gzos = null;
+
+        try {
+            fis = new FileInputStream(inFile);
+            FileOutputStream fos = new FileOutputStream(outFile);
+            BufferedOutputStream bos = new BufferedOutputStream(fos);
+            gzos = new GZIPOutputStream(bos);
+
+            int i = fis.read();
+            while (i != -1) {
+                gzos.write(i);
+                i = fis.read();
+            }
+
+            gzos.flush();
+        } catch (IOException e) {
+            System.err.println("ファイル操作に失敗しました");
+            e.printStackTrace();
+        } finally {
+            try {
+                if (fis != null) {
+                    fis.close();
+                }
+                if (gzos != null) {
+                    gzos.close();
+                }
+            } catch (IOException ee) {
+                ee.printStackTrace();
+            }
         }
-        if (gzos != null) {
-          gzos.close();
-        }catch(IOException ee){}
-      }
     }
-  }
 }
